@@ -1,8 +1,8 @@
 [English Version](README.EN.md)
 
-# Aprendendo _____
+# Aprendendo Terraform
 
-Este repositório contém os arquivos desenvolvidos durante o curso online de ____ realizado na plataforma [Alura Cursos Online](https://alura.com.br).
+Este repositório contém os arquivos desenvolvidos durante o curso online de Terraform realizado na plataforma [Alura Cursos Online](https://alura.com.br).
 
 ## Repositório Oficial da Alura
 
@@ -14,4 +14,4 @@ Os arquivos oficiais do curso, desenvolvidos pelo instrutor, estão disponíveis
 
 Os cursos em que estes arquivos foram desenvolvidos:
 
-[____](____).
+[Terraform: gerenciar infraestrutura como código e modularizar recursos](https://cursos.alura.com.br/course/terraform-provisionando-infraestrutura-na-nuvem).
