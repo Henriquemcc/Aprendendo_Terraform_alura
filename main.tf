@@ -3,5 +3,6 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "primeiro_bucket" {
+  count = 2
   bucket = lower(local.nome_final_bucket)
 }
