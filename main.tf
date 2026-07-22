@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "primeiro_bucket" {
-  bucket = "primeiro-bucket-henriquemcc"
+  bucket = var.bucket_name
 }
