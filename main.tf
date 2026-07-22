@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "primeiro_bucket" {
-  bucket = "${var.bucket_name}-${var.region}"
+  bucket = lower(local.nome_final_bucket)
 }
