@@ -80,10 +80,10 @@ E será exibida a opção para colocar o ```AWS Access Key ID```, ```AWS Secret 
 
 ### Criação de um bucket no Amazon S3
 
-Para criar um bucket no Amazon S3, em um Terminal, Prompt de Comando ou PowerShell, digite o seguinte comando, substituindo o ```<NOME-DO-BUCKET>``` pelo nome (que deve ser único para toda a AWS) do bucket Amazon S3 que deseja criar e ```<CODIGO-REGIAO>``` pelo código da região da AWS:
+Para criar um bucket no Amazon S3, em um Terminal, Prompt de Comando ou PowerShell, digite o seguinte comando, substituindo o ```<NOME-DO-BUCKET>``` pelo nome (que deve ser único para toda a AWS) do bucket Amazon S3 que deseja criar e ```<CODIGO-DA-REGIAO>``` pelo código da região da AWS:
 
 ```shell
-aws s3api create-bucket <NOME-DO-BUCKET> --region <CODIGO-REGIAO> --create-bucket-configuration
+aws s3api create-bucket <NOME-DO-BUCKET> --region <CODIGO-DA-REGIAO> --create-bucket-configuration
 ```
 
 E o bucket do Amazon S3 será criado.
@@ -97,3 +97,17 @@ aws s3api put-bucket-versioning --bucket <NOME-DO-BUCKET> --versioning-configura
 ```
 
 E o versionamento do bucket do Amazon S3 será habilitado.
+
+### Criação de tabela no Dynamo DB
+
+Para criar uma tabela no Dynamo DB, em um Terminal, Prompt de Comando ou PowerShell, digite o seguinte comando, substituindo o ```<NOME-DA-TABELA>``` pelo nome da tabela que deseja criar, o ```<CODIGO-DA-REGIAO>``` pelo código da região que deseja utilizar, ```<DEFINICOES-DE-ATRIBUTO>``` as definições de atributo que deseja utilizar e ```<ESQUEMA>``` o esquema do banco:
+
+```shell
+aws dynamodb create-table --table-name <NOME-DA-TABELA> --attribute-definitions <DEFINICOES-DE-ATRIBUTO> --key-schema <ESQUEMA> --billing-mode PAY_PER_REQUEST --region <CODIGO-DA-REGIAO>
+```
+
+No caso de uma tabela do Dynamo DB para gerenciar o lock do estado, impedindo que haja mais de um apply sendo executado ao mesmo tempo, utilize o seguinte comando, substituindo o ```<NOME-DA-TABELA>``` pelo nome da tabela que deseja criar e o ```<CODIGO-DA-REGIAO>``` pelo código da região que deseja utilizar:
+
+```shell
+aws dynamodb create-table --table-name <NOME-DA-TABELA> --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --billing-mode PAY_PER_REQUEST --region <CODIGO-DA-REGIAO>
+```
