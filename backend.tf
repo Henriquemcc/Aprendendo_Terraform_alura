@@ -4,5 +4,6 @@ terraform {
     key = "Aprendendo_Terraform_alura/terraform.tfstate"
     region = "us-east-1"
     encrypt = true
+    dynamodb_table = "terraform-henriquemcc-1-locks"
   }
 }
