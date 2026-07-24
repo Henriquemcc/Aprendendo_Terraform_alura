@@ -2,7 +2,7 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_s3_bucket" "primeiro_bucket" {
-  count = 2
-  bucket = lower(local.nome_final_bucket)
+module "meu_bucket" {
+  source = "./modules/s3"
+  bucket_name = var.bucket_name
 }
